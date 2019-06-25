@@ -44,15 +44,18 @@
         .manage_top.last {
             width:auto;
             height:100%;
-            margin-right:-15px;
             background:rgba(107, 120, 140,0.1);
+        }
+        .header {
+            background:#039be5;
+            height:20vh;
         }
     </style>
 
 </head>
 <body>
     <div class="media-container">
-        <div class="row">
+        <div class="row" style="margin:0;">
 
             <div class="col-lg-3 col-md-4 col-sm-12" style="height:100vh;position:fixed;background-color: #091629;background: linear-gradient(90deg, #091629, #0e213e);">
 
@@ -87,22 +90,37 @@
                         <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
                     </a>
                 </div>
-                <div class="manage_top" style="height:10%; width:auto;margin-right:-15px;"></div>
+                <div class="row manage_top" style="height:10%; width:auto;margin-right:-15px;"></div>
                 <div class="row">
                     <div class="nav-link link display-7 manage_top">
                         <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Advisor
                     </div>
                 </div>
-                <div class="manage_top last"></div>
+                <div class="row manage_top last"></div>
             </div>
 
-            <div class="col-lg-9 col-md-8 col-sm-12">
+            <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12">
+                <div class="row">
+                    <div class="header col-12">
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid col-12" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+                        <div class="grid-item">
+
+                        </div>
+                        <div class="grid-item">
+
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
+
     </div>
 
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
     <script src="assets/tether/tether.min.js"></script>
