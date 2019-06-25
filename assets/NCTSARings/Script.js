@@ -11,7 +11,6 @@ if (!navigator.onLine) {
 set_conferenceStatus("pending");
 }
 else {
-window.parent.parent.console.log("YES");
 if (window.parent.parent.askStatus()) {
 set_conferenceStatus("active");
 }
