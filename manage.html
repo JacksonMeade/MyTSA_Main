@@ -43,21 +43,38 @@
         }
         .manage_top.last {
             width:auto;
-            height:100%;
+            flex-grow: 1;
             background:rgba(107, 120, 140,0.1);
         }
         .header {
             background:#039be5;
             height:20vh;
         }
+        .sidebar {
+            display: flex;
+            flex-flow: column;
+            height:100vh;position:fixed;background-color: #091629;background: linear-gradient(90deg, #091629, #0e213e);
+            z-index: 22;
+            overflow-y:hidden;
+            overflow-x:hidden;
+                }
+
+        .open_scroll {
+            overflow-y:scroll;
+            margin-right:-15px;
+            margin-left:-15px;
+        }
+            .open_scroll::-webkit-scrollbar {
+                display:none;
+            }
     </style>
 
 </head>
-<body>
+<body style="overflow-x:hidden">
     <div class="media-container">
         <div class="row" style="margin:0;">
 
-            <div class="col-lg-3 col-md-4 col-sm-12" style="height:100vh;position:fixed;background-color: #091629;background: linear-gradient(90deg, #091629, #0e213e);">
+            <div class="col-lg-3 col-md-4 col-sm-12 sidebar">
 
                 <div class="row" style="background:rgba(107, 120, 140,0.1);border-bottom:1px solid #1c2c42">
                     <div class="col-12 justify-content-center">
@@ -72,39 +89,50 @@
                         <span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn"></span>
                     </a>
                 </div>
-                <div class="row">
-                    <a class="nav-link link display-7 manage_top">
-                        Competition
-                        <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
-                    </a>
+                <div class="open_scroll">
+                    <div class="row">
+                        <a class="nav-link link display-7 manage_top">
+                            Competition
+                            <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <table style="height:20vh">
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <a class="nav-link link display-7 manage_top">
+                            Chapters
+                            <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a class="nav-link link display-7 manage_top">
+                            Events
+                            <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
+                        </a>
+                    </div>
                 </div>
-                <div class="row">
-                    <a class="nav-link link display-7 manage_top">
-                        Chapters
-                        <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
-                    </a>
-                </div>
-                <div class="row">
-                    <a class="nav-link link display-7 manage_top">
-                        Events
-                        <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
-                    </a>
-                </div>
-                <div class="row manage_top" style="height:10%; width:auto;margin-right:-15px;"></div>
+                <div class="row manage_top last"></div>
                 <div class="row">
                     <div class="nav-link link display-7 manage_top">
                         <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Advisor
                     </div>
                 </div>
-                <div class="row manage_top last">
-                    <p class="display-4" style="color:#77797c !important;font-weight:100;font-size:0.7rem;position:absolute;bottom:0;left:1rem;"><em>  Site Created in 2019 by Jackson Meade for North Carolina TSA </em></p>
+                <div class="row" style="height:20vh;background:rgba(107, 120, 140,0.1);">
+                    <p class="display-4" style="color:#77797c !important;font-weight:100;font-size:0.7rem;position:absolute;bottom:0;margin-left:1rem;"><em>  Site Created in 2019 by Jackson Meade for North Carolina TSA </em></p>
                 </div>
+            </div>
             </div>
 
             <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12">
                 <div class="row">
                     <div class="header col-12">
-
+                          <h1 class="display-5 text-white" style="line-height:300%; text-transform:uppercase">Module Title</h1>
                     </div>
                 </div>
                 <div class="row">
