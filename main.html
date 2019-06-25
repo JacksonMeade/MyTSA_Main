@@ -161,32 +161,8 @@ app.controller('SuperCtrl', function($scope, $http) {
                         WELCOME, FIRSTNAME
                     </h2>
                     <p class="text-white mbr-text pb-3 mbr-fonts-style display-5">
-                        Today is [datetime]. You have {6} new notifications.
-                        AAaaaaaand
-
+                        Today is {{ Date.now() }}. You have {6} new notifications.
                     </p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tool Name</th>
-                                <th>Attribute 1</th>
-                                <th>Attribute 2</th>
-                                <th>Attribute 3</th>
-                                <th>Attribute 4</th>
-                                <th>Attribute 5</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="tool" ng-repeat="tool in tools">
-                                <td><p>{{ tool.gsx$toolname.$t}}</p></td>
-                                <td><p>{{ tool.gsx$attribute1.$t }}</p></td>
-                                <td><p>{{ tool.gsx$attribute2.$t }}</p></td>
-                                <td><p>{{ tool.gsx$attribute3.$t }}</p></td>
-                                <td><p>{{ tool.gsx$attribute4.$t }}</p></td>
-                                <td><p>{{ tool.gsx$attribute5.$t }}</p></td>
-                            </tr>
-                        </tbody>
-                    </table>
                     <!--<div class="row justify-content-center">
         <a class="btn btn-white-outline display-4" href="https://mobirise.com">CONTACT OFFICER HQ</a>
         <a class="btn btn-white-outline display-4" href="https://mobirise.com">NCTSA HOME</a>
