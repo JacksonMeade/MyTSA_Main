@@ -5,6 +5,13 @@ count = 0;
 window.parent.parent.initializeConnection();
 }
 
+function Movie_OnUpdate(TimeChange,SecondsChange){
+StackTrace="On Update";
+if (!navigator.onLine) {
+set_conferenceStatus("pending");
+}
+}
+
 function Frame_Notes_Conference_0_0(ID){
 StackTrace="Scene 1 Frame 0";
 TextBoxSet("N_CN.CountN",count);
