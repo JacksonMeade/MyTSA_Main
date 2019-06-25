@@ -60,6 +60,11 @@
                 }
 
         .open_scroll {
+                        display: flex;
+            flex-flow: column;
+            height:40vh;
+            transition:0.2s;
+            overflow-x: hidden;
             overflow-y:scroll;
             margin-right:-15px;
             margin-left:-15px;
@@ -91,12 +96,12 @@
                 </div>
                 <div class="open_scroll">
                     <div class="row">
-                        <a class="nav-link link display-7 manage_top">
+                        <a onclick="blinds('dropdown-1')" class="nav-link link display-7 manage_top">
                             Competition
                             <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
                         </a>
                     </div>
-                    <div class="row">
+                    <div class="row1" id="dropdown-1" style="display:none">
                         <table style="height:20vh">
                             <tr></tr>
                             <tr></tr>
@@ -105,19 +110,35 @@
                         </table>
                     </div>
                     <div class="row">
-                        <a class="nav-link link display-7 manage_top">
+                        <a onclick="blinds('dropdown-2')" class="nav-link link display-7 manage_top">
                             Chapters
                             <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
                         </a>
                     </div>
+                    <div class="row" id="dropdown-2" style="display:none">
+                        <table style="height:20vh">
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </table>
+                    </div>
                     <div class="row">
-                        <a class="nav-link link display-7 manage_top">
+                        <a onclick="blinds('dropdown-3')" class="nav-link link display-7 manage_top">
                             Events
                             <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
                         </a>
                     </div>
+                    <div class="row" id="dropdown-3" style="display:none">
+                        <table style="height:20vh">
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div class="row manage_top last"></div>
                 </div>
-                <div class="row manage_top last"></div>
                 <div class="row">
                     <div class="nav-link link display-7 manage_top">
                         <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Advisor
@@ -148,7 +169,18 @@
             </div>
         </div>
 
-    </div>
+    <script type="text/javascript">
+
+    function blinds(id) {
+        if (document.getElementById(id).style.display == "none") {
+            document.getElementById(id).style.display = "inherit"
+        }
+        else {
+            document.getElementById(id).style.display = "none"
+        }
+    }
+
+    </script>
 
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
