@@ -415,10 +415,10 @@
         window.onscroll = function () { scrollFunction() };
 
         
-    //window.onclick = function () {
+    function initializeConnection() {
         var key = document.getElementById("ConferenceHub").contentWindow.document.getElementById("Movie").contentWindow;
         key.alme("Hello World!");
-    //}
+    }
 
         function scrollFunction() {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {

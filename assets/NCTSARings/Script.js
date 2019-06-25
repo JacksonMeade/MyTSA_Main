@@ -1,7 +1,8 @@
 function Movie_OnStart(){
 StackTrace="On Start";
 count = 0;
-set_conferenceStatus("inactive");
+
+window.parent.parent.initializeConnection();
 }
 
 function Frame_Notes_Conference_0_0(ID){
