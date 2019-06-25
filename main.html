@@ -416,7 +416,7 @@
         window.onscroll = function () { scrollFunction() };
 
         key = document.getElementById("ConferenceHub").contentWindow.document.getElementById("Movie").contentWindow;
-        key.alme("Hello World!");
+        window.onclick = function () { key.alme("Hello World!"); }
 
         function scrollFunction() {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
