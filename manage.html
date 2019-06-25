@@ -83,6 +83,9 @@ box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);
             .open_scroll::-webkit-scrollbar {
                 display:none;
             }
+            .main {
+                z-index:1;
+            }
 
             .fixed-user {
                 position:absolute;
@@ -120,9 +123,9 @@ box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);
             transform:scale(1.02);
 
 
-            -webkit-box-shadow: none;
+            /*-webkit-box-shadow: none;
             -moz-box-shadow: none;
-            box-shadow: none;
+            box-shadow: none;*/
             }
             .gradient-green {
 background: rgb(32,145,32);
@@ -171,14 +174,50 @@ background: linear-gradient(-90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, r
         }
 
         .submodules {
-            padding-top:1rem;
+            padding-top:0;
             padding-bottom:2rem;
         }
         .a_submodule {
+            padding: 0.5rem 0 0.5rem 0;
+            width:auto;
+            height:100%;
+            color:#868b93 !important;
             transition:0.2s;
+            font-stretch:condensed;
         }
         .a_submodule:hover {
             color:white !important;
+        }
+        .submodule{
+            transition:0.2s;
+        }
+        .submodule:hover {
+             background:rgba(107, 120, 140,0.1);
+        }
+        @media(min-width:768px) {
+            .toolt_1 {
+                opacity:0;
+            }
+            .toolt_1:hover {
+            opacity:1;
+            }
+        }
+        @media(max-width:768px) {
+            .toolt_1 {
+                opacity: 1;
+            }
+        }
+        .toolt_1 {
+            position:absolute;width:5vh;height:10vh;bottom:2rem;right:-5vh;
+            transition:0.2s;
+        }
+        .toolt_2 {
+            color:#868b93 !important;
+            position:fixed;width:5vh;height:10vh;background:#182a46;border-radius:0 5rem 5rem 0;
+            cursor:pointer;
+        }
+        .toolt_arrow {
+            margin-left: -5px;display:inline-block;transform: rotate(90deg);line-height: 4.3rem;font-size: 2rem;
         }
     </style>
 
@@ -191,11 +230,16 @@ background: linear-gradient(-90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, r
         <br />
         <a><span class="display-5 mbri-question mbr-iconfont mbr-iconfont-btn" style="color: #a6c8d8;"></span></a>
     </div>
+
     <div class="media-container">
         <div class="row" style="margin:0;">
 
             <div class="col-lg-3 col-md-4 col-sm-12 sidebar">
-
+                <div class="toolt_1">
+                    <div class="toolt_2" onclick="alert('hi')">
+                        <span class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn toolt_arrow"></span>
+                    </div>
+                    </div>
                 <div class="row" style="background:rgba(107, 120, 140,0.1);border-bottom:1px solid #1c2c42">
                     <div class="col-12 justify-content-center">
                         <iframe id="ConferenceHub" type="text/html" src="assets/Rings_Logo.html" style="margin-left:5%;margin-bottom:10%; margin-top:10%; height:auto; width: 95%;" frameborder="0" scrolling="no"></iframe>
@@ -268,10 +312,20 @@ background: linear-gradient(-90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, r
                     <div class="row" id="dropdown-3" style="display:none">
                         <ul class="submodules col-12">
                             <li class="submodule">
-                                <a class="a_submodule">
-                                    <div class="row">
+                                <a>
+                                    <div class="row a_submodule">
                                         <div class="col-4"></div>
-                                        <div class="col-8">
+                                        <div class="col-8 display-7">
+                                            Submodule 1
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="submodule">
+                                <a>
+                                    <div class="row a_submodule">
+                                        <div class="col-4"></div>
+                                        <div class="col-8 display-7">
                                             Submodule 1
                                         </div>
                                     </div>
@@ -290,9 +344,9 @@ background: linear-gradient(-90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, r
                     <p class="display-4" style="color:#77797c !important;font-weight:100;font-size:0.7rem;position:absolute;bottom:0;margin-left:1rem;"><em>  Site Created in 2019 by Jackson Meade for North Carolina TSA </em></p>
                 </div>
             </div>
-            </div>
+        </div>
 
-        <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12">
+        <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main">
             <div class="row">
                 <div class="header col-12 gradient-blue">
                     <h2 class="display-5" style="color:#a6c8d8;line-height:300%;">NCTSA Management Portal</h2>
@@ -342,21 +396,21 @@ background: linear-gradient(-90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, r
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
     <script type="text/javascript">
 
-    function blinds(id) {
-        if (document.getElementById(("dropdown-"+id)).style.display == "none") {
-            document.getElementById(("dropdown-" + id)).style.display = "inherit";
-            document.getElementById(("arrow-" + id)).style.transform = "rotate(180deg)";
+        function blinds(id) {
+            if (document.getElementById(("dropdown-" + id)).style.display == "none") {
+                document.getElementById(("dropdown-" + id)).style.display = "inherit";
+                document.getElementById(("arrow-" + id)).style.transform = "rotate(180deg)";
 
+            }
+            else {
+                document.getElementById(("dropdown-" + id)).style.display = "none";
+                document.getElementById(("arrow-" + id)).style.transform = "rotate(0deg)";
+            }
         }
-        else {
-            document.getElementById(("dropdown-" + id)).style.display = "none";
-            document.getElementById(("arrow-" + id)).style.transform = "rotate(0deg)";
-        }
-    }
 
     </script>
 
