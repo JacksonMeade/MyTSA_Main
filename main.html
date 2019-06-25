@@ -114,7 +114,16 @@
     </style>
 
 </head>
-<body>
+
+<script type="text/javascript">
+    var app = angular.module('myApp', []);
+app.controller('SuperCtrl', function($scope, $http) { 
+  $http.get("https://spreadsheets.google.com/feeds/list/1vFAgyxmwrKWn9Bss3vmk5GKqn1QEZVspVTg6eMINMcc/1/public/values?alt=json")
+        .success(function(response) {$scope.tools = response.feed.entry;});
+});
+</script>
+
+<body ng-app="MyNCTSA" ng-controller="SuperCtrl">
     <section class="menu cid-rujVRnuh6o" once="menu" id="menu1-4">
 
 
@@ -151,6 +160,7 @@
                     </h2>
                     <p class="text-white mbr-text pb-3 mbr-fonts-style display-5">
                         Today is [datetime]. You have {6} new notifications.
+                        AAaaaaaand {{ tool[0].gsx$attribute1.$t }}
                     </p>
                     <!--<div class="row justify-content-center">
                         <a class="btn btn-white-outline display-4" href="https://mobirise.com">CONTACT OFFICER HQ</a>
