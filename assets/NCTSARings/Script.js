@@ -14,7 +14,6 @@ TextBoxSet("N_CN.CountN",count);
 function Conference_OnClick(){
 StackTrace="Conference.On Click";
 TimelineSetSpeed("N_CN",-1);
-TimelineSetFrame("N_CN",2);
 TimelinePlay("N_CN");
 }
 
@@ -27,7 +26,6 @@ TextBoxSet("N_CM.CountM",count);
 function Competition_OnClick(){
 StackTrace="Competition.On Click";
 TimelineSetSpeed("N_CM",-1);
-TimelineSetFrame("N_CM",2);
 TimelinePlay("N_CM");
 }
 
@@ -40,9 +38,7 @@ TextBoxSet("N_CH.CountH",count);
 function Chapter_OnClick(){
 StackTrace="Chapter.On Click";
 TimelineSetSpeed("N_CH",-1);
-TimelineSetFrame("N_CH",2);
 TimelinePlay("N_CH");
-
 }
 
 
