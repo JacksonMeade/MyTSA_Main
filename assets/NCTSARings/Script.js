@@ -52,6 +52,10 @@ function notify(type,num) {
 	TimelinePlay(selectedNotifier);
 }
 
+function engage_changer() {
+	StatusChange.Visible = true;
+}
+
 function set_conferenceStatus(status) {
 	switch(status) {
 		case "active":
