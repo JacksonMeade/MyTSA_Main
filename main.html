@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/socicon/css/styles.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="preload" href="assets/Rings_Logo.html" as="document">
 
     <style>
         #opener {
@@ -141,9 +142,7 @@
             <div class="row">
                 <div id="notifier" class="logo col-md-6 col-sm-12" style="text-align:center">
                     <div id="opener" style="height:50vh;width:auto;display:inline-block">
-                        <iframe id="ConferenceHub" type="text/html" src="assets/Rings_Logo.html" style="height:100%; width: auto;" frameborder="0" scrolling="no">
-                            
-                        </iframe>
+                        <iframe id="ConferenceHub" type="text/html" src="assets/Rings_Logo.html" style="height:100%; width: auto;" frameborder="0" scrolling="no"></iframe>
                         <!--<img src="assets/images/Logo_White.png" style="color:white;position:absolute;top:50%;transform:translateY(-50%);left:5%; padding-right:15vw; padding-left:15vw;z-index:3; width:90%;" />-->
                     </div>
                 </div>
@@ -155,9 +154,9 @@
                         Today is [datetime]. You have {6} new notifications.
                     </p>
                     <!--<div class="row justify-content-center">
-        <a class="btn btn-white-outline display-4" href="https://mobirise.com">CONTACT OFFICER HQ</a>
-        <a class="btn btn-white-outline display-4" href="https://mobirise.com">NCTSA HOME</a>
-    </div>-->
+                        <a class="btn btn-white-outline display-4" href="https://mobirise.com">CONTACT OFFICER HQ</a>
+                        <a class="btn btn-white-outline display-4" href="https://mobirise.com">NCTSA HOME</a>
+                    </div>-->
                     <div class="countdown1 cid-rulROHmtbS" id="countdown1-d">
                         <div class="container countdown-cont align-center">
                             <div class="daysCountdown col-3" title="Days"></div>
@@ -410,49 +409,50 @@
     <script src="assets/theme/js/script.js"></script>
     <script src="assets/slidervideo/script.js"></script>
     <script src="assets/formoid/formoid.min.js"></script>
+    
     <script type="text/javascript">
-    document.getElementById("pageTxt").innerText = "▼";
-    // When the user scrolls down 50px from the top of the document, resize the header's font size
-    window.onscroll = function () { scrollFunction() };
+        document.getElementById("pageTxt").innerText = "▼";
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function () { scrollFunction() };
 
-    key = document.getElementById("ConferenceHub").contentWindow.document.getElementById("Movie").contentWindow;
-    key.alme("Hello World!");
+        key = document.getElementById("ConferenceHub").contentWindow.document.getElementById("Movie").contentWindow;
+        key.alme("Hello World!");
 
-    function scrollFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("opener").style.height = "20vh";
-    document.getElementById("opener").style.paddingTop = "3.8rem";
-    document.getElementById("info").style.opacity = "0";
-    document.getElementById("info").style.display = "none";
-    document.getElementById("info").classList.remove('col-md-6');
-    document.getElementById("notifier").classList.remove('col-md-6');
-    document.getElementById("notifier").classList.add('col-md-12');
-    document.getElementById("pageTxt").innerText = "Events";
-    document.getElementById("previous").style.opacity = "0.7";
-    document.getElementById("next").style.opacity = "0.7";
-    document.getElementById("previous").style.display = "";
-    document.getElementById("next").style.display = "";
-    } else {
-    document.getElementById("opener").style.height = "50vh";
-    document.getElementById("opener").style.paddingTop = "0";
-    document.getElementById("info").style.opacity = "1";
-    document.getElementById("info").style.display = "";
-    document.getElementById("info").classList.add('col-md-6');
-    document.getElementById("notifier").classList.remove('col-md-12');
-    document.getElementById("notifier").classList.add('col-md-6');
-    document.getElementById("previous").style.opacity = "0";
-    document.getElementById("next").style.opacity = "0";
-    document.getElementById("previous").style.display = "none";
-    document.getElementById("next").style.display = "none";
-    }
-    if (document.body.scrollTop > 175 || document.documentElement.scrollTop > 175) {
-    document.getElementById("nav").classList.add('navbar-short');
-    document.getElementById("nav").classList.remove('transparent');
-    } else {
-    document.getElementById("nav").classList.remove('navbar-short');
-    document.getElementById("nav").classList.add('transparent');
-    }
-    }
+        function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                document.getElementById("opener").style.height = "20vh";
+                document.getElementById("opener").style.paddingTop = "3.8rem";
+                document.getElementById("info").style.opacity = "0";
+                document.getElementById("info").style.display = "none";
+                document.getElementById("info").classList.remove('col-md-6');
+                document.getElementById("notifier").classList.remove('col-md-6');
+                document.getElementById("notifier").classList.add('col-md-12');
+                document.getElementById("pageTxt").innerText = "Events";
+                document.getElementById("previous").style.opacity = "0.7";
+                document.getElementById("next").style.opacity = "0.7";
+                document.getElementById("previous").style.display = "";
+                document.getElementById("next").style.display = "";
+            } else {
+                document.getElementById("opener").style.height = "50vh";
+                document.getElementById("opener").style.paddingTop = "0";
+                document.getElementById("info").style.opacity = "1";
+                document.getElementById("info").style.display = "";
+                document.getElementById("info").classList.add('col-md-6');
+                document.getElementById("notifier").classList.remove('col-md-12');
+                document.getElementById("notifier").classList.add('col-md-6');
+                document.getElementById("previous").style.opacity = "0";
+                document.getElementById("next").style.opacity = "0";
+                document.getElementById("previous").style.display = "none";
+                document.getElementById("next").style.display = "none";
+            }
+            if (document.body.scrollTop > 175 || document.documentElement.scrollTop > 175) {
+                document.getElementById("nav").classList.add('navbar-short');
+                document.getElementById("nav").classList.remove('transparent');
+            } else {
+                document.getElementById("nav").classList.remove('navbar-short');
+                document.getElementById("nav").classList.add('transparent');
+            }
+        }
     </script>
 
 </body>
