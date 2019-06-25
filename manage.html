@@ -29,6 +29,7 @@
         }
         a.manage_top:hover {
             background:rgba(90, 103, 123,0.2);
+            color:#d0d5db !important;
         }
         .manage_top.first {
             color:#a4aab2 !important;
@@ -72,10 +73,21 @@
             .open_scroll::-webkit-scrollbar {
                 display:none;
             }
+
+            .fixed-user {
+                position:absolute;
+                top:0;
+                right:0;
+                z-index:50;
+            }
     </style>
 
 </head>
 <body style="overflow-x:hidden">
+    <div class="fixed-user align-right">
+        <p>Welcome, Firstname</p>
+        <button class="btn btn-white-outline">SIGN OUT</button>
+    </div>
     <div class="media-container">
         <div class="row" style="margin:0;">
 
@@ -96,12 +108,19 @@
                 </div>
                 <div class="open_scroll">
                     <div class="row">
-                        <a onclick="blinds('dropdown-1')" class="nav-link link display-7 manage_top">
-                            Competition
-                            <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
+                        <a onclick="blinds('1')" class="nav-link link display-7 manage_top">
+                            <div class="row">
+                                <div class="col-9">
+                                    Supermodule 1
+                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
+                                </div>
+                                <div class="col-3">
+                                    <span id="arrow-1" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
+                                </div>
+                            </div>
                         </a>
                     </div>
-                    <div class="row1" id="dropdown-1" style="display:none">
+                    <div class="row" id="dropdown-1" style="display:none">
                         <table style="height:20vh">
                             <tr></tr>
                             <tr></tr>
@@ -110,9 +129,16 @@
                         </table>
                     </div>
                     <div class="row">
-                        <a onclick="blinds('dropdown-2')" class="nav-link link display-7 manage_top">
-                            Chapters
-                            <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
+                        <a onclick="blinds('2')" class="nav-link link display-7 manage_top">
+                            <div class="row">
+                                <div class="col-9">
+                                    Supermodule 2
+                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
+                                </div>
+                                <div class="col-3">
+                                    <span id="arrow-2" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
+                                </div>
+                            </div>
                         </a>
                     </div>
                     <div class="row" id="dropdown-2" style="display:none">
@@ -124,9 +150,16 @@
                         </table>
                     </div>
                     <div class="row">
-                        <a onclick="blinds('dropdown-3')" class="nav-link link display-7 manage_top">
-                            Events
-                            <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Hi</em></p>
+                        <a onclick="blinds('3')" class="nav-link link display-7 manage_top">
+                            <div class="row">
+                                <div class="col-9">
+                                    Supermodule 3
+                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
+                                </div>
+                                <div class="col-3">
+                                    <span id="arrow-3" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
+                                </div>
+                            </div>
                         </a>
                     </div>
                     <div class="row" id="dropdown-3" style="display:none">
@@ -141,7 +174,7 @@
                 </div>
                 <div class="row">
                     <div class="nav-link link display-7 manage_top">
-                        <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Advisor
+                        <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Role
                     </div>
                 </div>
                 <div class="row" style="height:20vh;background:rgba(107, 120, 140,0.1);">
@@ -153,7 +186,9 @@
             <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12">
                 <div class="row">
                     <div class="header col-12">
-                          <h1 class="display-5 text-white" style="line-height:300%; text-transform:uppercase">Module Title</h1>
+                        <h2 class="display-5" style="color:#a6c8d8;line-height:300%;">NCTSA Management Portal</h2>
+
+                        <h1 class="display-2 text-white" style="line-height:100%; text-transform:uppercase;font-weight:bold">Module Title</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -172,11 +207,14 @@
     <script type="text/javascript">
 
     function blinds(id) {
-        if (document.getElementById(id).style.display == "none") {
-            document.getElementById(id).style.display = "inherit"
+        if (document.getElementById(("dropdown-"+id)).style.display == "none") {
+            document.getElementById(("dropdown-" + id)).style.display = "inherit";
+            document.getElementById(("arrow-" + id)).style.transform = "rotate(180deg)";
+
         }
         else {
-            document.getElementById(id).style.display = "none"
+            document.getElementById(("dropdown-" + id)).style.display = "none";
+            document.getElementById(("arrow-" + id)).style.transform = "rotate(0deg)";
         }
     }
 
