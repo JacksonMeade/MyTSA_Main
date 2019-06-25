@@ -415,8 +415,11 @@
         // When the user scrolls down 50px from the top of the document, resize the header's font size
         window.onscroll = function () { scrollFunction() };
 
-        key = document.getElementById("ConferenceHub").contentWindow.document.getElementById("Movie").contentWindow;
-        window.onclick = function () { key.alme("Hello World!"); }
+        
+    window.onclick = function () {
+        var key = document.getElementById("ConferenceHub").contentWindow.document.getElementById("Movie").contentWindow;
+        key.alme("Hello World!");
+    }
 
         function scrollFunction() {
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
