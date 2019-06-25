@@ -1,6 +1,7 @@
 function Movie_OnStart(){
 StackTrace="On Start";
 count = 0;
+status = "inactive"
 
 window.parent.parent.initializeConnection();
 }
@@ -18,6 +19,7 @@ else {
 set_conferenceStatus("inactive");
 }
 }
+window.parent.parent.UIStatus();
 }
 
 function Frame_Notes_Conference_0_0(ID){
@@ -59,6 +61,7 @@ TimelinePlay("N_CH");
 
 StackTrace="General";
 var count;
+var conferenceStatus;
 
 function notify(type,num) {
 	count = num;
@@ -72,6 +75,7 @@ function engage_changer() {
 }
 
 function set_conferenceStatus(status) {
+	conferenceStatus = status;
 	switch(status) {
 		case "active":
 			active.Visible = true;
