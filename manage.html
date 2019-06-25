@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
     <style>
+        body {
+            max-width:100vw;
+        }
         .manage_top {
             border-bottom:1px solid #1c2c42;background:rgba(107, 120, 140,0.1);width:100%;line-height:2rem;font-weight:500;
             color: #c1c6cc !important;
@@ -85,6 +88,15 @@
             .fixed_user_btn {
                 padding:0.1rem 0.3rem !important;
                 margin:0 !important;
+            }
+            .grid-item {
+            -webkit-box-shadow: 0px 0px 3px 1px rgba(179,179,179,1);
+            -moz-box-shadow: 0px 0px 3px 1px rgba(179,179,179,1);
+            box-shadow: 0px 0px 3px 1px rgba(179,179,179,1);
+
+            border-radius:5px;
+
+            margin:0.5rem;
             }
     </style>
 
@@ -200,13 +212,25 @@
                         <h1 class="display-2 text-white" style="line-height:100%; text-transform:uppercase;font-weight:bold">Module Title</h1>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="grid col-12" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
-                        <div class="grid-item">
-
-                        </div>
-                        <div class="grid-item">
-
+                <div class="container">
+                    <div class="row">
+                        <div class="grid col-12" data-masonry='{ "itemSelector": ".grid-item" }'>
+                            <div class="grid-item col-lg-4 col-md-6 col-sm-12">
+                                <h1>Hello world</h1>
+                                <p>Supplemental</p>
+                            </div>
+                            <div class="grid-item col-lg-4 col-md-4 col-sm-12">
+                                <h1>Hello world</h1>
+                                <p>Supplemental</p>
+                            </div>
+                            <div class="grid-item">
+                                <h1>Hello world</h1>
+                                <p>Supplemental</p>
+                            </div>
+                            <div class="grid-item">
+                                <h1>Hello world</h1>
+                                <p>Supplemental</p>
+                            </div>
                         </div>
                     </div>
                 </div>
