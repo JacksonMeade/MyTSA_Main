@@ -76,17 +76,26 @@
 
             .fixed-user {
                 position:absolute;
-                top:0;
-                right:0;
+                top:1rem;
+                right:1rem;
                 z-index:50;
+                color:#a6c8d8;
+                font-weight:bold;
+            }
+            .fixed_user_btn {
+                padding:0.1rem 0.3rem !important;
+                margin:0 !important;
             }
     </style>
 
 </head>
 <body style="overflow-x:hidden">
     <div class="fixed-user align-right">
-        <p>Welcome, Firstname</p>
-        <button class="btn btn-white-outline">SIGN OUT</button>
+        <p style="margin-bottom:0.1rem;">Firstname</p>
+        <button class="fixed_user_btn btn btn-primary">SIGN OUT</button>
+        <br />
+        <br />
+        <a><span class="display-5 mbri-question mbr-iconfont mbr-iconfont-btn" style="color: #a6c8d8;"></span></a>
     </div>
     <div class="media-container">
         <div class="row" style="margin:0;">
