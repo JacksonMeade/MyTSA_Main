@@ -8,9 +8,6 @@ window.parent.parent.initializeConnection();
 function Frame_Notes_Conference_0_0(ID){
 StackTrace="Scene 1 Frame 0";
 TextBoxSet("N_CN.CountN",count);
-if(TimelineGetSpeed("N_CN")==-1) {
-TimelineSetFrame("N_CN",0);
-}
 
 }
 
@@ -24,9 +21,6 @@ TimelinePlay("N_CN");
 function Frame_Notes_Competition_0_0(ID){
 StackTrace="Scene 1 Frame 0";
 TextBoxSet("N_CM.CountM",count);
-if(TimelineGetSpeed("N_CM")==-1) {
-TimelineSetFrame("N_CM",0);
-}
 
 }
 
@@ -40,10 +34,6 @@ TimelinePlay("N_CM");
 function Frame_Notes_Chapter_0_0(ID){
 StackTrace="Scene 1 Frame 0";
 TextBoxSet("N_CH.CountH",count);
-if(TimelineGetSpeed("N_CH")==-1) {
-TimelineSetFrame("N_CH",0);
-}
-
 
 }
 
