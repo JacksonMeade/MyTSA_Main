@@ -73,10 +73,6 @@ function set_conferenceStatus(status) {
 			TextBoxSet("StatusText","State Conference has Not Started");
 			break;
 	}
-}
-
-function alme(message) {
-TextBoxSet("StatusText",message);
 
 }
 
