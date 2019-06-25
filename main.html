@@ -118,7 +118,7 @@
 </head>
 
 <script type="text/javascript">
-    var app = angular.module('myApp', []);
+    var app = angular.module('MyNCTSA', []);
 app.controller('SuperCtrl', function($scope, $http) { 
   $http.get("https://spreadsheets.google.com/feeds/list/1vFAgyxmwrKWn9Bss3vmk5GKqn1QEZVspVTg6eMINMcc/1/public/values?alt=json")
         .success(function(response) {$scope.tools = response.feed.entry;});
