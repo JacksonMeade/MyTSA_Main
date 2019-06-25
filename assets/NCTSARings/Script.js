@@ -19,7 +19,6 @@ else {
 set_conferenceStatus("inactive");
 }
 }
-window.parent.parent.UIStatus();
 }
 
 function Frame_Notes_Conference_0_0(ID){
