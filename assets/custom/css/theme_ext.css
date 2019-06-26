@@ -218,7 +218,7 @@ a.manage_top:hover {
 
 @media(max-width:768px) {
     .toolt_1 {
-        opacity: 1;
+        display:none;
     }
     .toolt_3 {
         display:initial;
