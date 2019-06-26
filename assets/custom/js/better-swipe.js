@@ -54,7 +54,7 @@ function touchMove(event) {
 }
 
 function touchEnd(event) {
-    if (opennav) event.preventDefault();
+    //event.preventDefault();
     // check to see if more than one finger was used and that there is an ending coordinate
     if (fingerCount === 1 && curX !== 0) {
         // use the Distance Formula to determine the length of the swipe
