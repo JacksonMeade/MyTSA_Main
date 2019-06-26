@@ -44,7 +44,7 @@ function touchStart(event, passedName) {
 }
 
 function touchMove(event) {
-    event.preventDefault();
+   // event.preventDefault();
     if (event.touches.length === 1) {
         curX = event.touches[0].pageX;
         curY = event.touches[0].pageY;
