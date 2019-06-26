@@ -71,6 +71,11 @@ function changeSidebar(override,input) {
 }
 
 function scrollFunction() {
+
+    if (document.body.offsetWidth < 768) {
+        window.scrollTo(0,0);
+    }
+
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         document.getElementById("opener").style.height = "20vh";
         document.getElementById("opener").style.paddingTop = "3.8rem";
