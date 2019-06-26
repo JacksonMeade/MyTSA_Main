@@ -264,7 +264,7 @@ a.manage_top:hover {
 .lds-ripple {
     display: inline-block;
     position: absolute;
-    left: 35%;
+    left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     width: 5vh;
