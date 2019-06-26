@@ -228,7 +228,7 @@ a.manage_top:hover {
     bottom: 2rem;
     right: -5vh;
     cursor: pointer;
-    transition: 0.2s;
+    transition: opacity 0.2s;
 }
 
 .toolt_2 {
@@ -246,7 +246,7 @@ a.manage_top:hover {
     height: 10vh;
     bottom: 2rem;
     right: 0;
-    transition: 0.2s;
+    transition: opacity 0.2s;
 }
 
 .toolt_4 {
