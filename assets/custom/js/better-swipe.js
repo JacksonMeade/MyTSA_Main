@@ -24,9 +24,27 @@ var swipeDirection = null;
 // make sure its ID is passed in the event call placed in the element declaration, like:
 // <div id="picture-frame" ontouchstart="touchStart(event,'picture-frame');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
 
+function preventVerticalBlock() {
+    if (event.touches.length == 1) {
+        curX = event.touches[0].pageX;
+        curY = event.touches[0].pageY;
+        if (Math.abs((curX - startX)) > 10) {
+            //default acion is prevented only if the 
+            //finger count is one and change in  
+            //x coordinatesis greater than 10 px                                   
+            event.preventDefault();
+        }
+    }
+    else {
+        touchCancel(event);
+    }
+}
+}
+
 function touchStart(event, passedName) {
     // disable the standard ability to select the touched object
     //event.preventDefault();
+    preventVerticalBlock();
     // get the total number of fingers touching the screen
     fingerCount = event.touches.length;
     // since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
@@ -45,16 +63,18 @@ function touchStart(event, passedName) {
 
 function touchMove(event) {
     //event.preventDefault();
-    if (event.touches.length === 1) {
-        curX = event.touches[0].pageX;
-        curY = event.touches[0].pageY;
-    } else {
-        touchCancel(event);
-    }
+    preventVerticalBlock();
+    //if (event.touches.length === 1) {
+    //    curX = event.touches[0].pageX;
+    //    curY = event.touches[0].pageY;
+    //} else {
+    //    touchCancel(event);
+    //}
 }
 
 function touchEnd(event) {
     //event.preventDefault();
+    preventVerticalBlock();
     // check to see if more than one finger was used and that there is an ending coordinate
     if (fingerCount === 1 && curX !== 0) {
         // use the Distance Formula to determine the length of the swipe
