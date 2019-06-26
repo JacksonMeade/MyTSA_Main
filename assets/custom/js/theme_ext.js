@@ -1,4 +1,4 @@
-﻿
+﻿var opennav = true;
 var sidebar;
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 window.onscroll = function () { scrollFunction(); };
@@ -35,6 +35,7 @@ function changeSidebar(override,input) {
     sidebar = document.getElementById("sidenav");
 
     if (sidebar.style.transform === "initial" || (override && input === "left")) {
+        opennav = false;
         var fullstring= String("transition:0.2s;transform:translate(-"+String(document.getElementsByClassName('sidebar')[0].offsetWidth)+"px);");
         //if ($(window).width() < 768) {
         //    // do something for small screens
@@ -61,6 +62,7 @@ function changeSidebar(override,input) {
     }
     else {
         if (!override || (override && input === "right")) {
+            opennav = true;
             document.getElementsByClassName('main')[0].setAttribute("style", "");
             document.getElementsByClassName('main')[0].setAttribute("class", "offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main");
             sidebar.setAttribute("style", "transition:0.2s;transform:initial");
