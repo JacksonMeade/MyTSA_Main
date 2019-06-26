@@ -44,7 +44,7 @@ function touchStart(event, passedName) {
 }
 
 function touchMove(event) {
-    //event.preventDefault();
+    event.preventDefault();
     if (event.touches.length === 1) {
         curX = event.touches[0].pageX;
         curY = event.touches[0].pageY;
@@ -102,17 +102,19 @@ function caluculateAngle() {
 function determineSwipeDirection() {
     if ((swipeAngle <= 45) && (swipeAngle >= 0)) {
         swipeDirection = 'left';
-        event.preventDefault();
+        //event.preventDefault();
     } else if ((swipeAngle <= 360) && (swipeAngle >= 315)) {
         swipeDirection = 'left';
-        event.preventDefault();
+        //event.preventDefault();
     } else if ((swipeAngle >= 135) && (swipeAngle <= 225)) {
         swipeDirection = 'right';
-        event.preventDefault();
+        //event.preventDefault();
     } else if ((swipeAngle > 45) && (swipeAngle < 135)) {
         swipeDirection = 'down';
+        window.location = this.href;
     } else {
         swipeDirection = 'up';
+        window.location = this.href;
     }
 }
 
