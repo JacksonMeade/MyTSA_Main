@@ -1,9 +1,25 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<head>
+    <!-- Site made with Mobirise Website Builder v4.8.1, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.8.1, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/as-pie-progress/css/progress.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="assets/custom/css/theme_ext.css" type="text/css">
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/6.2.3/firebase-app.js"></script>
@@ -15,51 +31,296 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <script src="assets/custom/js/better-swipe.js"></script>
+</head>
+<body style="overflow-x:hidden">
+    <div class="fixed-user align-right">
+        <p style="margin-bottom:0.1rem;">Firstname</p>
+        <button class="fixed_user_btn btn btn-primary">SIGN OUT</button>
+        <br />
+        <br />
+        <a><span class="display-5 mbri-question mbr-iconfont mbr-iconfont-btn" style="color: #a6c8d8;"></span></a>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <div class="media-container" id="swipeBox" ontouchstart="touchStart(event,'swipeBox');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
+        <div class="row no-gutters" id="sidenav" style="transition:0.2s;transform:initial;">
+
+            <div class="col-lg-3 col-md-4 col-sm-12 sidebar" id="sm-slide" style="transition:0.2s;transform:initial;">
+                <div class="toolt_1">
+                    <div class="toolt_2" onclick="changeSidebar()">
+                        <span class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn toolt_arrow" id="toolt-arrow"></span>
+                    </div>
+                </div>
+                <!--<div class="toolt_3">
+                    <div class="toolt_4" onclick="changeSidebar()">
+                        <span class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn toolt_arrow"></span>
+                    </div>
+                </div>-->
+                <div class="row" style="background:rgba(107, 120, 140,0.1);border-bottom:1px solid #1c2c42">
+                    <div class="col-12 justify-content-center">
+                        <iframe id="ConferenceHub" type="text/html" src="assets/Rings_Logo.html" style="margin-left:5%;margin-bottom:10%; margin-top:10%; height:auto; width: 95%;" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+                <div class="row">
+                    <a class="nav-link link display-7 col-9 manage_top first">
+                        Overview
+                    </a>
+                    <a class="nav-link link display-7 col-3 manage_top first_s">
+                        <span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn"></span>
+                    </a>
+                </div>
+                <div class="open_scroll">
+                    <div class="row">
+                        <a onclick="blinds('1')" class="nav-link link display-7 manage_top">
+                            <div class="row">
+                                <div class="col-9">
+                                    Supermodule 1
+                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
+                                </div>
+                                <div class="col-3">
+                                    <span id="arrow-1" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row" id="dropdown-1" style="display:none">
+                        <table style="height:20vh">
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <a onclick="blinds('2')" class="nav-link link display-7 manage_top">
+                            <div class="row">
+                                <div class="col-9">
+                                    Supermodule 2
+                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
+                                </div>
+                                <div class="col-3">
+                                    <span id="arrow-2" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row" id="dropdown-2" style="display:none">
+                        <table style="height:20vh">
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <a onclick="blinds('3')" class="nav-link link display-7 manage_top">
+                            <div class="row">
+                                <div class="col-9">
+                                    Supermodule 3
+                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
+                                </div>
+                                <div class="col-3">
+                                    <span id="arrow-3" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row" id="dropdown-3" style="display:none">
+                        <ul class="submodules col-12">
+                            <li class="submodule">
+                                <a>
+                                    <div class="row a_submodule">
+                                        <div class="col-4"></div>
+                                        <div class="col-8 display-7">
+                                            Submodule 1
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="submodule">
+                                <a>
+                                    <div class="row a_submodule">
+                                        <div class="col-4"></div>
+                                        <div class="col-8 display-7">
+                                            Submodule 1
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row manage_top last"></div>
+                </div>
+                <div class="row">
+                    <div class="nav-link link display-7 manage_top">
+                        <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Role
+                    </div>
+                </div>
+                <div class="row" style="height:20vh;background:rgba(107, 120, 140,0.1);">
+                    <p class="display-4" style="color:#77797c !important;font-weight:100;font-size:0.7rem;position:absolute;bottom:0;margin-left:1rem;"><em>  Site Created in 2019 by Jackson Meade for North Carolina TSA </em></p>
+                </div>
+            </div>
+
+            <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main">
+                <div class="mbr-overlay" id="HoldPending">
+                    <div class="lds-ripple"><div></div><div></div></div>
+                </div>
+                <div class="row">
+                    <div class="header col-12">
+                        <h2 class="display-5" style="margin-left:1rem;color:#a6c8d8;line-height:300%;">NCTSA Management Portal</h2>
+
+                        <h1 class="display-2 text-white" style="margin-left:1rem;line-height:100%; text-transform:uppercase;font-weight:bold">Module Title</h1>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-11">
+                            <div class="card-columns">
+
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="display-5 card-header">
+                                        Card Header
+                                    </div>
+                                    <div class="card-body">
+                                        <h3 class="card-title">Each Card body can have a title</h3>
+                                        <h4 class="card-subtitle">And a subtitle</h4>
+                                        <p class="card-text">This is a card body 1</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/dropdown/js/script.min.js"></script>
+    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/mbr-tabs/mbr-tabs.js"></script>
+    <script src="assets/custom/js/theme_ext.js"></script>
+    <script src="assets/parallax/jarallax.min.js"></script>
+    <script src="assets/as-pie-progress/jquery-as-pie-progress.min.js"></script>
+    <script src="assets/countdown/jquery.countdown.min.js"></script>
+    <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+    <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+    <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="assets/slidervideo/script.js"></script>
+    <script src="assets/formoid/formoid.min.js"></script>
+    <script src="assets/hub/manager.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        document.addEventListener('DOMContentLoaded', function () {
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+            try {
+                let app = firebase.app();
+                let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+                document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+            }
+        });
     </script>
-  </body>
+
+</body>
 </html>
