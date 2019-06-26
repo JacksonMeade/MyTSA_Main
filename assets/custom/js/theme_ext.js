@@ -1,6 +1,17 @@
 ﻿document.getElementById("pageTxt").innerText = "▼";
+var sidebar;
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 window.onscroll = function () { scrollFunction(); };
+
+function changeSidebar() {
+        sidebar = document.getElementById("sidenav").style;
+    if (sidebar.transform === "initial") {
+        sidebar.transform = "translate(-95vw)";
+    }
+    else {
+        sidebar.transform = "initial";
+    }
+}
 
 function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
