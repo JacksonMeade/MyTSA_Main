@@ -111,10 +111,10 @@ function determineSwipeDirection() {
         //event.preventDefault();
     } else if ((swipeAngle > 45) && (swipeAngle < 135)) {
         swipeDirection = 'down';
-        window.location = this.href;
+        return true;
     } else {
         swipeDirection = 'up';
-        window.location = this.href;
+        return true;
     }
 }
 
