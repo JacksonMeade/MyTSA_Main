@@ -128,6 +128,7 @@ a.manage_top:hover {
     transition: 0.2s;
     margin: 0.5rem;
     cursor:pointer;
+    border-radius:0;
 }
 
     .card:hover {

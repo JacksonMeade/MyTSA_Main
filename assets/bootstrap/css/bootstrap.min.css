@@ -4864,7 +4864,7 @@ tbody.collapse.show {
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem
+    /*border-radius: .25rem*/
 }
 
     .card > hr {
@@ -4918,7 +4918,7 @@ tbody.collapse.show {
 }
 
     .card-header:first-child {
-        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+        /*border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0*/
     }
 
     .card-header + .list-group .list-group-item:first-child {
@@ -4932,7 +4932,7 @@ tbody.collapse.show {
 }
 
     .card-footer:last-child {
-        border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)
+        /*border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)*/
     }
 
 .card-header-tabs {
@@ -4958,19 +4958,19 @@ tbody.collapse.show {
 
 .card-img {
     width: 100%;
-    border-radius: calc(.25rem - 1px)
+    /*border-radius: calc(.25rem - 1px)*/
 }
 
 .card-img-top {
     width: 100%;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px)
+    /*border-top-left-radius: calc(.25rem - 1px);*/
+    /*border-top-right-radius: calc(.25rem - 1px)*/
 }
 
 .card-img-bottom {
     width: 100%;
-    border-bottom-right-radius: calc(.25rem - 1px);
-    border-bottom-left-radius: calc(.25rem - 1px)
+    /*border-bottom-right-radius: calc(.25rem - 1px);*/
+    /*border-bottom-left-radius: calc(.25rem - 1px)*/
 }
 
 .card-deck {
@@ -5079,7 +5079,7 @@ tbody.collapse.show {
                 }
 
             .card-group > .card:only-child {
-                border-radius: .25rem
+                /*border-radius: .25rem*/
             }
 
                 .card-group > .card:only-child .card-header,
@@ -5095,14 +5095,14 @@ tbody.collapse.show {
                 }
 
             .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
-                border-radius: 0
+                /*border-radius: 0*/
             }
 
                 .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer,
                 .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,
                 .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
                 .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top {
-                    border-radius: 0
+                    /*border-radius: 0*/
                 }
 }
 
@@ -5264,7 +5264,7 @@ tbody.collapse.show {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .25rem
+    /*border-radius: .25rem*/
 }
 
     .badge:empty {
@@ -5382,7 +5382,7 @@ tbody.collapse.show {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     background-color: #e9ecef;
-    border-radius: .3rem
+    /*border-radius: .3rem*/
 }
 
 @media (min-width:576px) {
@@ -5394,7 +5394,7 @@ tbody.collapse.show {
 .jumbotron-fluid {
     padding-right: 0;
     padding-left: 0;
-    border-radius: 0
+    /*border-radius: 0*/
 }
 
 .alert {
