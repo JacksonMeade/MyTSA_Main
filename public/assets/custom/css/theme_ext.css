@@ -242,6 +242,9 @@ a.manage_top:hover {
         .toolt_3 {
             display:none;
         }
+    .toolt-arrow-mobile {
+        display:none;
+    }
 }
 
 @media(max-width:768px) {
@@ -250,6 +253,9 @@ a.manage_top:hover {
     }
     .toolt_3 {
         display:initial;
+    }
+    span.toolt-arrow-mobile::before {
+        font-size:0.5rem;
     }
 }
 
