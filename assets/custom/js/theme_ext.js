@@ -1,4 +1,4 @@
-﻿document.getElementById("pageTxt").innerText = "▼";
+﻿
 var sidebar;
 // When the user scrolls down 50px from the top of the document, resize the header's font size
 window.onscroll = function () { scrollFunction(); };
@@ -15,7 +15,17 @@ function blinds(id) {
     }
 }
 
-function changeSidebar() {
+$(function () {
+    $("body").swipe({
+        //Generic swipe handler for all directions
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+            changeSidebar(true, direction);
+            alert(direction);
+        }
+    });
+});
+
+function changeSidebar(override,input) {
     if ($(window).width() > 768) {
         // do something for big screens
         if (!document.getElementById("sm-slide")) {
@@ -33,7 +43,7 @@ function changeSidebar() {
 
     sidebar = document.getElementById("sidenav");
 
-    if (sidebar.style.transform === "initial") {
+    if (sidebar.style.transform === "initial" || (override && input === "right")) {
         var fullstring= String("transition:0.2s;transform:translate(-"+String(document.getElementsByClassName('sidebar')[0].offsetWidth)+"px);");
         //if ($(window).width() < 768) {
         //    // do something for small screens
@@ -59,9 +69,11 @@ function changeSidebar() {
 
     }
     else {
-        document.getElementsByClassName('main')[0].setAttribute("style", "");
-        document.getElementsByClassName('main')[0].setAttribute("class", "offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main");
-        sidebar.setAttribute("style", "transition:0.2s;transform:initial");
+        if (!override || (override && input === "left")) {
+            document.getElementsByClassName('main')[0].setAttribute("style", "");
+            document.getElementsByClassName('main')[0].setAttribute("class", "offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main");
+            sidebar.setAttribute("style", "transition:0.2s;transform:initial");
+        }
     }
 }
 

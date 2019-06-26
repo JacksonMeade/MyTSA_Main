@@ -56,6 +56,7 @@ a.manage_top:hover {
     background: linear-gradient(90deg, #091629, #0e213e);
     z-index: 22;
     transition:0.2s;
+    transform: initial;
     overflow-y: hidden;
     padding-right:1rem !important;
     padding-left:1rem !important;
@@ -82,7 +83,6 @@ a.manage_top:hover {
 
 .main {
     z-index: 1;
-    transition:0.1s;
 }
 
 .fixed-user {
@@ -229,7 +229,7 @@ a.manage_top:hover {
     bottom: 2rem;
     right: -5vh;
     cursor: pointer;
-    transition: opacity 0.2s;
+    transition: 0.2s;
 }
 
 .toolt_2 {
@@ -247,7 +247,7 @@ a.manage_top:hover {
     height: 10vh;
     bottom: 2rem;
     right: 0;
-    transition: opacity 0.2s;
+    transition: 0.2s;
 }
 
 .toolt_4 {
