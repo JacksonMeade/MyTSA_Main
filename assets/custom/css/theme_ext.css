@@ -82,6 +82,7 @@ a.manage_top:hover {
 
 .main {
     z-index: 1;
+    transition:0.1s;
 }
 
 .fixed-user {
