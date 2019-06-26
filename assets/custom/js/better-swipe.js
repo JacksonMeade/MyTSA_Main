@@ -26,7 +26,7 @@ var swipeDirection = null;
 
 function touchStart(event, passedName) {
     // disable the standard ability to select the touched object
-    event.preventDefault();
+    //event.preventDefault();
     // get the total number of fingers touching the screen
     fingerCount = event.touches.length;
     // since we're looking for a swipe (single finger) and not a gesture (multiple fingers),
@@ -54,7 +54,7 @@ function touchMove(event) {
 }
 
 function touchEnd(event) {
-    event.preventDefault();
+    //event.preventDefault();
     // check to see if more than one finger was used and that there is an ending coordinate
     if (fingerCount === 1 && curX !== 0) {
         // use the Distance Formula to determine the length of the swipe
@@ -118,19 +118,5 @@ function processingRoutine() {
     if (swipeDirection === 'left' || swipeDirection === 'right') {
         // REPLACE WITH YOUR ROUTINES
         changeSidebar(true, swipeDirection);
-    }
-    else if (swipeDirection === 'down') {
-        window.scrollBy({
-            top: window.innerHeight / 2,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
-    else if (swipeDirection === 'up') {
-        window.scrollBy({
-            top: window.innerHeight / 2,
-            left: 0,
-            behavior: 'smooth'
-        });
     }
 }
