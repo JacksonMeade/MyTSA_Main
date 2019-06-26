@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <link rel="stylesheet" href="assets/custom/css/theme_ext.css" type="text/css">
-
+    <script src="assets/custom/js/better-swipe.js"></script>
 </head>
 <body style="overflow-x:hidden">
     <div class="fixed-user align-right">
@@ -31,7 +31,7 @@
         <a><span class="display-5 mbri-question mbr-iconfont mbr-iconfont-btn" style="color: #a6c8d8;"></span></a>
     </div>
 
-    <div class="media-container">
+    <div class="media-container" id="swipeBox" ontouchstart="touchStart(event,'swipeBox');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
         <div class="row no-gutters" id="sidenav" style="transition:0.2s;transform:initial;">
 
             <div class="col-lg-3 col-md-4 col-sm-12 sidebar" id="sm-slide" style="transition:0.2s;transform:initial;">

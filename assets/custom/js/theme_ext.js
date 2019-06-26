@@ -15,15 +15,6 @@ function blinds(id) {
     }
 }
 
-$(function () {
-    $("body").swipe({
-        //Generic swipe handler for all directions
-        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-            changeSidebar(true, direction);
-            alert(direction);
-        }
-    });
-});
 
 function changeSidebar(override,input) {
     if ($(window).width() > 768) {
