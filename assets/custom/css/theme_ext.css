@@ -1,11 +1,10 @@
 ﻿html {
-    overflow-x:hidden;
-}
-body {
     max-width: 100vw;
-    background: #f4f4f4;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+body {
+    background: #f4f4f4;
 }
 
 .manage_top {
@@ -358,6 +357,13 @@ a.manage_top:hover {
 
 .active.popup > .mbr-overlay {
     display: inherit;
+}
+
+#HoldPending {
+    z-index: 100;
+    height: 100vh;
+    position:fixed;
+    width:inherit;
 }
 
 .popup-container {

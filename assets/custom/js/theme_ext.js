@@ -57,6 +57,8 @@ function changeSidebar(override,input) {
             document.getElementsByClassName('main')[0].setAttribute("class", "col-12 main");
 
             document.getElementsByClassName('main')[0].setAttribute("style", fullstring);
+
+            document.getElementById("toolt-arrow").setAttribute("style", "transform:rotate(-90deg)");
         }
 
     }
@@ -66,6 +68,7 @@ function changeSidebar(override,input) {
             document.getElementsByClassName('main')[0].setAttribute("style", "");
             document.getElementsByClassName('main')[0].setAttribute("class", "offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main");
             sidebar.setAttribute("style", "transition:0.2s;transform:initial");
+            document.getElementById("toolt-arrow").setAttribute("style", "");
         }
     }
 }
