@@ -49,23 +49,38 @@ a.manage_top:hover {
     z-index: 10;
 }
 
+/*body {
+    background: url('../../../assets/images/techbkgd.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+}*/
+
 .sidebar {
-    position:fixed;
+    position: fixed;
     display: flex;
     flex-flow: column;
     height: 100vh;
     background-color: #091629;
-    background: linear-gradient(90deg, #091629, #0e213e);
+    background: linear-gradient(90deg, rgba(9,22,41,1), rgba(14,33,62,1));
     z-index: 22;
-    transition:0.2s;
+    transition: 0.2s;
     transform: initial;
     overflow-y: hidden;
-    padding-right:1rem !important;
-    padding-left:1rem !important;
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
     overflow-x: hidden;
-    -webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);
+    /*-webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);
     -moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);
-    box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,1);*/
 }
 
 .open_scroll {
@@ -131,25 +146,38 @@ a.manage_top:hover {
     background: rgb(32,145,32);
     background: linear-gradient(-90deg, rgba(32,145,32,1) 0%, rgba(119,221,203,1) 100%);
 }
-
 .gradient-red {
-    background: rgb(145,9,2);
-    background: linear-gradient(90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, rgba(255,161,102,1) 100%);
+    background: #c31432; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #240b36, #c31432); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gradient-red-reverse {
+    background: #c31432; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.gradient-orange {
+    background: #e65c00; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F9D423, #e65c00); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.gradient-red-reverse {
-    background: rgb(145,9,2);
-    background: linear-gradient(-90deg, rgba(145,9,2,1) 0%, rgba(239,70,61,1) 35%, rgba(255,161,102,1) 100%);
+.gradient-orange-reverse {
+    background: #e65c00; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F9D423, #e65c00); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .gradient-blue {
-    background: rgb(8,36,64);
-    background: linear-gradient(90deg, rgba(8,36,64,1) 0%, rgba(9,60,121,1) 35%, rgb(1, 181, 228) 100%)
+    background: #1488CC; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #2B32B2, #1488CC); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .gradient-blue-reverse {
-    background: rgb(8,36,64);
-    background: linear-gradient(-90deg, rgba(8,36,64,1) 0%, rgba(9,60,121,1) 35%, rgb(1, 181, 228) 100%)
+    background: #1488CC; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card-header {
