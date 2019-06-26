@@ -119,4 +119,10 @@ function processingRoutine() {
         // REPLACE WITH YOUR ROUTINES
         changeSidebar(true, swipeDirection);
     }
+    else if (swipeDirection === 'down') {
+        window.scrollBy(0, -300);
+    }
+    else if (swipeDirection === 'up') {
+        window.scrollBy(0, 300);
+    }
 }
