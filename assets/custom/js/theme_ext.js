@@ -72,7 +72,7 @@ function changeSidebar(override,input) {
 
 function scrollFunction() {
 
-    if (document.body.offsetWidth < 768) {
+    if (document.body.offsetWidth < 768 && opennav) {
         window.scrollTo(0,0);
     }
 
