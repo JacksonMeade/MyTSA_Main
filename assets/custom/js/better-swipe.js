@@ -120,9 +120,17 @@ function processingRoutine() {
         changeSidebar(true, swipeDirection);
     }
     else if (swipeDirection === 'down') {
-        window.scrollBy(0, -300);
+        window.scrollBy({
+            top: window.innerHeight / 2,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
     else if (swipeDirection === 'up') {
-        window.scrollBy(0, 300);
+        window.scrollBy({
+            top: window.innerHeight / 2,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 }
