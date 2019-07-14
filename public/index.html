@@ -32,259 +32,55 @@
     <script defer src="/__/firebase/init.js"></script>
 
     <script src="assets/custom/js/better-swipe.js"></script>
+
+    <script type="text/javascript">
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: '<url-to-redirect-to-on-success>',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                firebase.auth.GithubAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+            ],
+            // tosUrl and privacyPolicyUrl accept either url string or a callback
+            // function.
+            // Terms of service url/callback.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url/callback.
+            privacyPolicyUrl: function () {
+                window.location.assign('<your-privacy-policy-url>');
+            }
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
 </head>
-<body style="overflow-x:hidden">
-    <div class="fixed-user align-right">
-        <p style="margin-bottom:0.1rem;">Firstname</p>
-        <button class="fixed_user_btn btn btn-primary">SIGN OUT</button>
-        <br />
-        <br />
-        <a><span class="display-5 mbri-question mbr-iconfont mbr-iconfont-btn" style="color: #a6c8d8;"></span></a>
-    </div>
+<body>
+    <section class="cid-ruj6aij7GS mbr-fullscreen" id="header15-3">
 
-    <div class="media-container" id="swipeBox" ontouchstart="touchStart(event,'swipeBox');" ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
-        <div class="row no-gutters" id="sidenav" style="transition:0.2s;transform:initial;">
 
-            <div class="col-lg-3 col-md-4 col-sm-12 sidebar" id="sm-slide" style="transition:0.2s;transform:initial;">
-                <div class="toolt_1">
-                    <div class="toolt_2" onclick="changeSidebar()">
-                        <span class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn toolt_arrow" id="toolt-arrow"></span>
-                    </div>
+        <div class="container align-right">
+            <div class="row">
+                <div class="logo col-lg-6 col-md-6 col-sm-12" style="text-align:center">
+                    <iframe src="assets/Rings_NoLogo.html" style="height:50vh;width:auto;display:inline-block" frameborder="0" scrolling="no"></iframe>
+                    <img src="assets/images/Logo_White.png" style="color:white;position:absolute;top:50%;transform:translateY(-50%);left:5%; z-index:3; width:90%;" />
                 </div>
-                <!--<div class="toolt_3">
-                    <div class="toolt_4" onclick="changeSidebar()">
-                        <span class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn toolt_arrow"></span>
-                    </div>
-                </div>-->
-                <div class="row" style="background:rgba(107, 120, 140,0.1);border-bottom:1px solid #1c2c42">
-                    <div class="col-12 justify-content-center">
-                        <iframe id="ConferenceHub" type="text/html" src="assets/Rings_Logo.html" style="margin-left:5%;margin-bottom:10%; margin-top:10%; height:auto; width: 95%;" frameborder="0" scrolling="no"></iframe>
-                    </div>
-                </div>
-                <div class="row">
-                    <a class="nav-link link display-7 col-9 manage_top first">
-                        Overview
-                    </a>
-                    <a class="nav-link link display-7 col-3 manage_top first_s">
-                        <span class="mbri-setting3 mbr-iconfont mbr-iconfont-btn"></span>
-                    </a>
-                </div>
-                <div class="open_scroll">
-                    <div class="row">
-                        <a onclick="blinds('1')" class="nav-link link display-7 manage_top">
-                            <div class="row">
-                                <div class="col-9">
-                                    Supermodule 1
-                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
-                                </div>
-                                <div class="col-3">
-                                    <span id="arrow-1" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="row" id="dropdown-1" style="display:none">
-                        <table style="height:20vh">
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <a onclick="blinds('2')" class="nav-link link display-7 manage_top">
-                            <div class="row">
-                                <div class="col-9">
-                                    Supermodule 2
-                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
-                                </div>
-                                <div class="col-3">
-                                    <span id="arrow-2" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="row" id="dropdown-2" style="display:none">
-                        <table style="height:20vh">
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                        </table>
-                    </div>
-                    <div class="row">
-                        <a onclick="blinds('3')" class="nav-link link display-7 manage_top">
-                            <div class="row">
-                                <div class="col-9">
-                                    Supermodule 3
-                                    <br /><p class="display-4" style="font-size:0.7rem;margin-bottom:0.35rem;"><em>Description</em></p>
-                                </div>
-                                <div class="col-3">
-                                    <span id="arrow-3" class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn" style="display:inline-block;line-height:3rem"></span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="row" id="dropdown-3" style="display:none">
-                        <ul class="submodules col-12">
-                            <li class="submodule">
-                                <a>
-                                    <div class="row a_submodule">
-                                        <div class="col-4"></div>
-                                        <div class="col-8 display-7">
-                                            Submodule 1
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="submodule">
-                                <a>
-                                    <div class="row a_submodule">
-                                        <div class="col-4"></div>
-                                        <div class="col-8 display-7">
-                                            Submodule 1
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="row manage_top last"></div>
-                </div>
-                <div class="row">
-                    <div class="col-8 nav-link link display-7 manage_top">
-                        <p class="display-4" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;"><em>  Signed in as </em></p>Role
-                    </div>
-                    <div class="col-4 nav-link link display-7 manage_top">
-                        <p class="display-4 toolt-arrow-mobile" style="font-weight:100;font-size:0.7rem;margin-bottom:0;margin-top:0.5rem;">
-                            <em> Swipe </em><span class="mbri-arrow-next mbr-iconfont mbr-iconfont-btn toolt-arrow-mobile"></span>
-                        </p>
-                    </div>
-                </div>
-                </div>
-                <div class="row" style="height:20vh;background:rgba(107, 120, 140,0.1);">
-                    <p class="display-4" style="color:#77797c !important;font-weight:100;font-size:0.7rem;position:absolute;bottom:0;margin-left:1rem;"><em>  Site Created in 2019 by Jackson Meade for North Carolina TSA </em></p>
-                </div>
-            </div>
-
-            <div class="offset-lg-3 col-lg-9 offset-md-4 col-md-8 col-sm-12 main">
-                <div class="mbr-overlay" id="HoldPending">
-                    <div class="lds-ripple"><div></div><div></div></div>
-                </div>
-                <div class="row">
-                    <div class="header col-12">
-                        <h2 class="display-5" style="margin-left:1rem;color:#a6c8d8;line-height:300%;">NCTSA Management Portal</h2>
-
-                        <h1 class="display-2 text-white" style="margin-left:1rem;line-height:100%; text-transform:uppercase;font-weight:bold">Module Title</h1>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row no-gutters">
-                        <div class="col-11">
-                            <div class="card-columns">
-
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="display-5 card-header">
-                                        Card Header
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Each Card body can have a title</h3>
-                                        <h4 class="card-subtitle">And a subtitle</h4>
-                                        <p class="card-text">This is a card body 1</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                <div id="firebaseui-auth-container"></div>
             </div>
         </div>
-    </div>
 
+    </section>
+
+
+    <script src="assets/fbase/require.js"></script>
     <script src="assets/web/assets/jquery/jquery.min.js"></script>
     <script src="assets/popper/popper.min.js"></script>
     <script src="assets/tether/tether.min.js"></script>
