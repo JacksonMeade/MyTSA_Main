@@ -22,7 +22,7 @@ signupForm.addEventListener('submit', (e) => {
 		});
 	}).then(() => {
 		signupForm.querySelector('.error').innerHTML = ''
-		window.location.replace("homepage/home.html");
+		window.location.replace("../homepage/home.html");
 		signupForm.reset();
 	}).catch(err => {
 		signupForm.querySelector('.error').innerHTML = err.message;
