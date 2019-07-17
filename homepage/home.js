@@ -31,7 +31,7 @@ logout.addEventListener('click', (e) => {
 
 	auth.signOut().then(function() {
 		console.log('User Logged Out!');
-		window.location.replace("../login.html");
+		window.location.replace("../login_signup/login.html");
 	}).catch(function(error) {
 		console.log(error);
 	});
