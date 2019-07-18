@@ -23,7 +23,7 @@ signupForm.addEventListener('submit', (e) => {
 function createUser(password) {
 	const email = signupForm['email'].value;
 
-	auth.createUserWithEmailAndPassword(email, password).then(() => {
+	auth.createUserWithEmailAndPassword(email, password).then((cred) => {
 		const e = document.getElementById("role");
 
 		db.collection('Users').add({
