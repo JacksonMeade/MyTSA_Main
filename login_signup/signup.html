@@ -41,11 +41,10 @@
 			};
 			firebase.initializeApp(firebaseConfig);
 
-		    // make auth and firestore references
 		    const auth = firebase.auth();
 		    const db = firebase.firestore();
 		    const functions = firebase.functions();
-		    // update firestore settings
+
 		    db.settings({ timestampsInSnapshots: true });
 		</script>
 		<script src="signup.js" charset="utf-8"></script>

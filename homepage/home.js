@@ -7,12 +7,10 @@ function loadInfo(doc) {
 	$("#last_name").html(doc.data().last_name);
 	$("#email").html(auth.currentUser.email);
 	$("#role").html(role);
+
 	if (role == "organization_manager") {
-			$("#make-organization").css("visibility","visible");
-	} else {
-		$("#make-organization").css("visibility","hidden");
+		$("#make-organization").css("visibility", "visible");
 	}
-	
 }
 
 firebase.auth().onAuthStateChanged((user) => {
@@ -34,10 +32,17 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 $(function() {
+	$("#make-organization").css("visibility", "hidden");
 	$("#organization-form").css("visibility", "hidden");
+
 	$("#make-organization").click(function() {
 		$("#organization-form").css("visibility", "visible");
 
+		const form = document.querySelector('#organization-form');
+
+		db.collection('Organization').add({
+			name: form['name'].value;
+		});
 	});
 });
 
