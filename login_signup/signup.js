@@ -3,28 +3,42 @@ const signupForm = document.querySelector('#signupForm');
 signupForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-	const email = signupForm['email'].value;
 	const password = signupForm['password'].value;
 
 	if (password !== signupForm['confirm_password'].value) {
 		alert("Your passwords do not match");
+		return;
 	}
 
-	var e = document.getElementById("role");
-	var strUser = e.options[e.selectedIndex].value;
+	if (auth.CurrentUser != null) {
+		auth.signOut().then(() => {
+			createUser(password);
+		});
+	} else {
+		createUser(password);
+	}
+});
 
-	auth.createUserWithEmailAndPassword(email, password).then(cred => {
-		return db.collection('Users').add({
+
+function createUser(password) {
+	const email = signupForm['email'].value;
+
+	auth.createUserWithEmailAndPassword(email, password).then(() => {
+		const e = document.getElementById("role");
+
+		db.collection('Users').add({
 			email: email,
+			uid : auth.currentUser.uid,
 			first_name: signupForm['first_name'].value,
 			last_name: signupForm['last_name'].value,
-			role: strUser
+			role: e.options[e.selectedIndex].value
+		}).then(() => {
+			window.location.replace("../homepage/home.html");
+			signupForm.reset();
 		});
-	}).then(() => {
-		signupForm.querySelector('.error').innerHTML = ''
-		window.location.replace("../homepage/home.html");
-		signupForm.reset();
+
+		signupForm.querySelector('.error').innerHTML = '';
 	}).catch(err => {
 		signupForm.querySelector('.error').innerHTML = err.message;
 	});
-});
+}

@@ -8,7 +8,7 @@ function loadInfo(doc) {
 	$("#role").html(doc.data().role);
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(user => {
   if (user) {
 		if (!userSignedIn) {
 			var email = user.email;
@@ -29,10 +29,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 logout.addEventListener('click', (e) => {
 	e.preventDefault();
 
-	auth.signOut().then(function() {
+	auth.signOut().then(() => {
 		console.log('User Logged Out!');
 		window.location.replace("../login_signup/login.html");
-	}).catch(function(error) {
-		console.log(error);
+	}).catch(err => {
+		console.log(err);
 	});
 });
