@@ -27,7 +27,6 @@ function createUser(password) {
 		const e = document.getElementById("role");
 
 		db.collection('Users').add({
-			email: email,
 			uid : auth.currentUser.uid,
 			first_name: signupForm['first_name'].value,
 			last_name: signupForm['last_name'].value,
