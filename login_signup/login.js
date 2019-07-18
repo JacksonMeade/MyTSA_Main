@@ -1,11 +1,21 @@
+const loginForm = document.querySelector('#loginForm');
+
 loginForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-	const loginForm = document.querySelector('#loginForm');
-	
 	const email = loginForm['email'].value;
 	const password = loginForm['password'].value;
 
+	if (auth.currentUser != null) {
+		auth.signOut().then(() => {
+			login(email, password);
+		});
+	} else {
+		login(email, password);
+	}
+});
+
+function login(email, password) {
 	auth.signInWithEmailAndPassword(email, password).then(() => {
 		loginForm.reset();
 		loginForm.querySelector('.error').innerHTML = '';
@@ -13,4 +23,4 @@ loginForm.addEventListener('submit', (e) => {
 	}).catch(err => {
 		loginForm.querySelector('.error').innerHTML = err.message;
 	});
-});
+}

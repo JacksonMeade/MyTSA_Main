@@ -34,7 +34,6 @@ function createUser(password) {
 			approved: false
 		}).then(() => {
 			window.location.replace("../homepage/home.html");
-			signupForm.reset();
 		});
 
 		signupForm.querySelector('.error').innerHTML = '';
