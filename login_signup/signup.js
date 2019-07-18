@@ -31,7 +31,8 @@ function createUser(password) {
 			uid : auth.currentUser.uid,
 			first_name: signupForm['first_name'].value,
 			last_name: signupForm['last_name'].value,
-			role: e.options[e.selectedIndex].value
+			role: e.options[e.selectedIndex].value,
+			approved: false
 		}).then(() => {
 			window.location.replace("../homepage/home.html");
 			signupForm.reset();
