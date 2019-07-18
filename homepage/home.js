@@ -4,7 +4,7 @@ var userSignedIn = false;
 function loadInfo(doc) {
 	$("#first_name").html(doc.data().first_name);
 	$("#last_name").html(doc.data().last_name);
-	$("#email").html(doc.data().email);
+	$("#email").html(auth.currentUser.email);
 	$("#role").html(doc.data().role);
 }
 
@@ -23,6 +23,7 @@ firebase.auth().onAuthStateChanged(user => {
 		}
   } else {
 	  console.log("No user logged in");
+	  window.location.replace("../login_signup/login.html");
   }
 });
 
