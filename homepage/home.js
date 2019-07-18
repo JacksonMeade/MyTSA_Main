@@ -41,7 +41,11 @@ $(function() {
 		const form = document.querySelector('#organization-form');
 
 		db.collection('Organization').add({
-			name: form['name'].value;
+			name: form['name'].value,
+			abbreviation: form['abbreviation'].value,
+			description: form['description'].value,
+			archived_info: {},
+			owners: {}
 		});
 	});
 });
