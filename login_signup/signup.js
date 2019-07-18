@@ -10,7 +10,7 @@ signupForm.addEventListener('submit', (e) => {
 		return;
 	}
 
-	if (auth.CurrentUser != null) {
+	if (auth.currentUser != null) {
 		auth.signOut().then(() => {
 			createUser(password);
 		});
