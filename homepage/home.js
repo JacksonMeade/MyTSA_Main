@@ -1,4 +1,5 @@
 const logout = document.querySelector('#logout');
+var userSignedIn = false;
 
 function loadInfo(doc) {
 	$("#first_name").html(doc.data().first_name);
@@ -7,17 +8,19 @@ function loadInfo(doc) {
 	$("#role").html(doc.data().role);
 }
 
-$(function() {
-	var user = auth.currentUser;
-
+firebase.auth().onAuthStateChanged((user) => {
 	if (user) {
-		var uid = user.uid;
+		if (!userSignedIn) {
+			var uid = user.uid;
 
-		db.collection('Users').where("uid", "==", "" + uid).get().then(snapshot => {
-			snapshot.docs.forEach(doc => {
-				loadInfo(doc);
+			db.collection('Users').where("uid", "==", "" + uid).get().then(snapshot => {
+				snapshot.docs.forEach(doc => {
+					loadInfo(doc);
+				});
 			});
-		});
+
+			userSignedIn = true;
+		}
 	} else {
 	  console.log("No user logged in");
 	}

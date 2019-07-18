@@ -16,7 +16,7 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 function login(email, password) {
-	auth.signInWithEmailAndPassword(email, password).then(() => {
+	auth.signInWithEmailAndPassword(email, password).then((cred) => {
 		loginForm.reset();
 		loginForm.querySelector('.error').innerHTML = '';
 		window.location.replace("../homepage/home.html");
