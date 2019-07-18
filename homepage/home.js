@@ -23,6 +23,14 @@ $(function() {
 	}
 });
 
+$(function() {
+	$("#organization-form").css("visibility", "hidden");
+	$("#make-organization").click(function() {
+		$("#organization-form").css("visibility", "visible");
+
+	});
+});
+
 logout.addEventListener('click', (e) => {
 	e.preventDefault();
 
