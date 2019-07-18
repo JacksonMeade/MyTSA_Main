@@ -5,12 +5,12 @@
 		<title>TSA Home</title>
 	</head>
 	<body>
-		<button id="make-organization">Make an Organization</button>
+		<button id="show-form">Make an Organization</button>
 		<form id="organization-form">
-			<input type="Organization" name="Organization" placeholder="Organization" required>
-			<input type="Description" name="Description" placeholder="Description" required>
-			<input type = "Name" name= "Name" placeholder="Name" required>
-			<button type="submit" name="button">Log in</button>
+			<input type = "name" name= "name" placeholder="Name" required>
+			<input type="abbreviation" name="abbreviation" placeholder="Abbreviation" required>
+			<input type="description" name="description" placeholder="Description" required>
+			<button id="make-organization" type="submit" name="button">Make</button>
 			<div class="error"></div>
 		</form>
 

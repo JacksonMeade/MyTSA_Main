@@ -1,3 +1,4 @@
+const form = document.querySelector('#organization-form');
 const logout = document.querySelector('#logout');
 var userSignedIn = false;
 
@@ -9,7 +10,7 @@ function loadInfo(doc) {
 	$("#role").html(role);
 
 	if (role == "organization_manager") {
-		$("#make-organization").css("visibility", "visible");
+		$("#show-form").css("visibility", "visible");
 	}
 }
 
@@ -32,21 +33,11 @@ firebase.auth().onAuthStateChanged((user) => {
 });
 
 $(function() {
-	$("#make-organization").css("visibility", "hidden");
+	$("#show-form").css("visibility", "hidden");
 	$("#organization-form").css("visibility", "hidden");
 
-	$("#make-organization").click(function() {
+	$("#show-form").click(function() {
 		$("#organization-form").css("visibility", "visible");
-
-		const form = document.querySelector('#organization-form');
-
-		db.collection('Organization').add({
-			name: form['name'].value,
-			abbreviation: form['abbreviation'].value,
-			description: form['description'].value,
-			archived_info: {},
-			owners: {}
-		});
 	});
 });
 
@@ -59,4 +50,19 @@ logout.addEventListener('click', (e) => {
 	}).catch(function(error) {
 		console.log(error);
 	});
+});
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+		db.collection('Organizations').add({
+			name: form['name'].value,
+			abbreviation: form['abbreviation'].value,
+			description: form['description'].value,
+			archived_info: [],
+			owners: []
+		}).then(() => {
+					$("#organization-form").css("visibility", "hidden");
+					form.reset();
+		});
 });
