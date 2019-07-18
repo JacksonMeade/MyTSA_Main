@@ -2,10 +2,17 @@ const logout = document.querySelector('#logout');
 var userSignedIn = false;
 
 function loadInfo(doc) {
+	var role = doc.data().role;
 	$("#first_name").html(doc.data().first_name);
 	$("#last_name").html(doc.data().last_name);
 	$("#email").html(auth.currentUser.email);
-	$("#role").html(doc.data().role);
+	$("#role").html(role);
+	if (role == "organization_manager") {
+			$("#make-organization").css("visibility","visible");
+	} else {
+		$("#make-organization").css("visibility","hidden");
+	}
+	
 }
 
 firebase.auth().onAuthStateChanged((user) => {
