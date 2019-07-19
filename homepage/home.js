@@ -146,9 +146,13 @@ form.addEventListener('submit', (e) => {
 				db.collection('Users').doc(doc.id).update({
 					organizations: firebase.firestore.FieldValue.arrayUnion(abbreviation)
 				}).then(() => {
-					document.location.reload(true);
-					$("#organization-form").css("visibility", "hidden");
-					form.reset();
+					db.collection('Users').doc(doc.id).update({
+						organizations: firebase.firestore.FieldValue.arrayRemove("");
+					}).then(() => {
+						document.location.reload(true);
+						$("#organization-form").css("visibility", "hidden");
+						form.reset();
+					});
 				});;
 			});
 		});
