@@ -24,7 +24,7 @@ function loadInfo(doc) {
 		var organizations = doc.data().organizations;
 
 		for (var i=0;i<organizations.length;i++) {
-			getApprovalRequests(organizations[i], i);
+			getApprovalRequests(role, organizations[i], i);
 		}
 	}
 
@@ -33,7 +33,7 @@ function loadInfo(doc) {
 	}
 }
 
-function getApprovalRequests(org, i) {
+function getApprovalRequests(role, org, i) {
 	var lowerRank = "";
 
 	if (role == "organization_manager") {
@@ -43,8 +43,6 @@ function getApprovalRequests(org, i) {
 	} else if (role == "chapter_advisor") {
 		lowerRank = "competitor";
 	}
-
-	console.log(lowerRank);
 
 	db.collection('Users').where("role", "==", lowerRank).where("approved", "==", "false").where("rejected", "==", "false").where("organization", "==", org).get().then(snapshot => {
 		snapshot.docs.forEach(doc => {
@@ -143,17 +141,16 @@ form.addEventListener('submit', (e) => {
 		archived_info: [],
 		owners: [ auth.currentUser.uid ]
 	}).then(() => {
-		$("#organization-form").css("visibility", "hidden");
-		form.reset();
-
 		db.collection('Users').where("uid", "==", auth.currentUser.uid).get().then(snapshot => {
 			snapshot.docs.forEach(doc => {
 				db.collection('Users').doc(doc.id).update({
 					organizations: firebase.firestore.FieldValue.arrayUnion(abbreviation)
-				});
+				}).then(() => {
+					document.location.reload(true);
+					$("#organization-form").css("visibility", "hidden");
+					form.reset();
+				});;
 			});
-		}).then(() => {
-			document.location.reload(true);
 		});
 	});
 
