@@ -21,7 +21,11 @@ function loadInfo(doc) {
 
 		$("#approval-section").append($(approvalRequests));
 
-		getApprovalRequests(doc.data().organization);
+		var organizations = doc.data().organizations;
+
+		for (var i=0;i<organizations.length;i++) {
+			getApprovalRequests(organizations[i], i);
+		}
 	}
 
 	if (role == "organization_manager") {
@@ -29,7 +33,7 @@ function loadInfo(doc) {
 	}
 }
 
-function getApprovalRequests(org) {
+function getApprovalRequests(org, i) {
 	var lowerRank = "";
 
 	if (role == "organization_manager") {
@@ -47,7 +51,9 @@ function getApprovalRequests(org) {
 				return;
 			}
 
-			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " + doc.data().state;
+			console.log("YYYYYYYYYYYYYYYYYYYYYYYYyy");
+
+			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " + doc.data().state + doc.data().organization[i];
 
 			var requestElement = document.createElement("div");
 			$(requestElement).addClass("approval-request");

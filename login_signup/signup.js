@@ -51,7 +51,7 @@ function createUser(password) {
 			role: role,
 			state: state,
 			rejected: false,
-			organization: organ,
+			organizations: [ organ ],
 			approved: false
 		}).then(() => {
 			window.location.replace("../homepage/home.html");
