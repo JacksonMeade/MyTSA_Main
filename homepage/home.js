@@ -23,7 +23,7 @@ function loadInfo(doc) {
 
 		$("#approval-section").append($(approvalRequests));
 
-		getApprovalRequests();
+		getApprovalRequests(doc.data().organization);
 	}
 
 	if (role == "organization_manager") {
@@ -31,7 +31,7 @@ function loadInfo(doc) {
 	}
 }
 
-function getApprovalRequests() {
+function getApprovalRequests(org) {
 	var lowerRank = "";
 
 	if (role == "organization_manager") {
@@ -42,16 +42,14 @@ function getApprovalRequests() {
 		lowerRank = "competitor";
 	}
 
-	db.collection('Users').where("role", "==", lowerRank).where("approved", "==",
-	"false").where("rejected", "==", "false").get().then(snapshot => {
+	db.collection('Users').where("role", "==", lowerRank).where("approved", "==", "false").where("rejected", "==", "false").where("organization", "==", org).get().then(snapshot => {
 		snapshot.docs.forEach(doc => {
 
 			if (doc.data().state != userState && userState != "national") {
 				return;
 			}
 
-			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " +
-			doc.data().state;
+			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " + doc.data().state;
 
 			var requestElement = document.createElement("div");
 			$(requestElement).addClass("approval-request");

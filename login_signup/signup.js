@@ -25,6 +25,7 @@ function createUser(password) {
 	const email = signupForm['email'].value;
 
 	const stateOption = document.getElementById("state");
+	const org = document.getElementById("user-organization");
 
 	var state;
 	var role = e.options[e.selectedIndex].value;
@@ -43,6 +44,7 @@ function createUser(password) {
 			role: role,
 			state: state,
 			rejected: false,
+			organization: org.options[org.selectedIndex].value,
 			approved: false
 		}).then(() => {
 			window.location.replace("../homepage/home.html");
@@ -57,6 +59,20 @@ function createUser(password) {
 $(function() {
 	$("#label-state").css("visibility", "hidden");
 	$("#state").css("visibility", "hidden");
+
+	db.collection('Organizations').get().then(snapshot => {
+		snapshot.docs.forEach(doc => {
+			var abbreviation = doc.data().abbreviation;
+			var name = doc.data().name;
+
+			var item = document.createElement("option");
+			$(item).attr("id", "user-organization");
+			$(item).html(abbreviation);
+			$(item).attr("value", abbreviation);
+			$(item).attr("title", name);
+		});
+	});
+
 });
 
 function checkRole() {
