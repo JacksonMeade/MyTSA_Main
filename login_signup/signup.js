@@ -27,6 +27,7 @@ function createUser(password) {
 	const stateOption = document.getElementById("role");
 
 	var state;
+	var role = e.options[e.selectedIndex].value;
 
 	if (role == "competitor" || role == "state_delegation_advisor" || role == "chapter_advisor") {
 		state = stateOption.options[stateOption.selectedIndex].value;
@@ -39,7 +40,7 @@ function createUser(password) {
 			uid : auth.currentUser.uid,
 			first_name: signupForm['first_name'].value,
 			last_name: signupForm['last_name'].value,
-			role: e.options[e.selectedIndex].value,
+			role: role,
 			state: state,
 			rejected: false,
 			approved: false

@@ -42,14 +42,16 @@ function getApprovalRequests() {
 		lowerRank = "competitor";
 	}
 
-	db.collection('Users').where("role", "==", lowerRank).where("approved", "==", "false").where("rejected", "==", "false").get().then(snapshot => {
+	db.collection('Users').where("role", "==", lowerRank).where("approved", "==",
+	"false").where("rejected", "==", "false").get().then(snapshot => {
 		snapshot.docs.forEach(doc => {
 
 			if (doc.data().state != userState && userState != "national") {
 				return;
 			}
 
-			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " + doc.data().state;
+			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " +
+			doc.data().state;
 
 			var requestElement = document.createElement("div");
 			$(requestElement).addClass("approval-request");
@@ -91,7 +93,8 @@ firebase.auth().onAuthStateChanged((user) => {
 		if (!userSignedIn) {
 			var uid = user.uid;
 
-			db.collection('Users').where("uid", "==", "" + uid).get().then(snapshot => {
+			db.collection('Users').where("uid", "==", "" + uid).get().then(snapshot =>
+				 {
 				snapshot.docs.forEach(doc => {
 					loadInfo(doc);
 				});
