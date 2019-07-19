@@ -24,7 +24,7 @@ signupForm.addEventListener('submit', (e) => {
 function createUser(password) {
 	const email = signupForm['email'].value;
 
-	const stateOption = document.getElementById("role");
+	const stateOption = document.getElementById("state");
 
 	var state;
 	var role = e.options[e.selectedIndex].value;
