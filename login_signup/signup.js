@@ -75,8 +75,6 @@ $(function() {
 			var abbreviation = doc.data().abbreviation;
 			var name = doc.data().name;
 
-			console.log(name);
-
 			var item = document.createElement("option");
 			$(item).addClass("user-organization");
 			$(item).html(abbreviation);
