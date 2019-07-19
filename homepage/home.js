@@ -11,9 +11,9 @@ function loadInfo(doc) {
 	$("#first_name").html(doc.data().first_name);
 	$("#last_name").html(doc.data().last_name);
 	$("#email").html(auth.currentUser.email);
-	$("#role").html(role);
-	$("#state").html(userState);
-	$("#approved").html(doc.data().approved);
+	$("#role").html("Role: " + role);
+	$("#state").html("State: " + userState);
+	document.getElementById("approved").innerHTML = "Approved: " + doc.data().approved;
 
 	if (role != "competitor") {
 		var approvalRequests = document.createElement("div");
@@ -44,6 +44,8 @@ function getApprovalRequests(role, org, i) {
 		lowerRank = "competitor";
 	}
 
+	console.log(lowerRank + ", " + org);
+
 	db.collection('Users').where("role", "==", lowerRank).where("approved", "==", "false").where("rejected", "==", "false").where("organization", "==", org).get().then(snapshot => {
 		snapshot.docs.forEach(doc => {
 
@@ -53,7 +55,7 @@ function getApprovalRequests(role, org, i) {
 
 			console.log("YYYYYYYYYYYYYYYYYYYYYYYYyy");
 
-			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " + doc.data().state + doc.data().organization[i];
+			var userInfo = doc.data().first_name + " " + doc.data().last_name + " " + doc.data().state + doc.data().organizations[i];
 
 			var requestElement = document.createElement("div");
 			$(requestElement).addClass("approval-request");
@@ -76,13 +78,13 @@ function getApprovalRequests(role, org, i) {
 
 			$(approveButton).click(function() {
 				db.collection('Users').doc($(this).parent().attr("request-id")).update({
-					approved: true
+					approved: "true"
 				});
 			});
 
 			$(rejectButton).click(function() {
 				db.collection('Users').doc($(this).parent().attr("request-id")).update({
-					rejected: true
+					rejected: "true"
 				});
 			});
 
@@ -147,7 +149,7 @@ form.addEventListener('submit', (e) => {
 					organizations: firebase.firestore.FieldValue.arrayUnion(abbreviation)
 				}).then(() => {
 					db.collection('Users').doc(doc.id).update({
-						organizations: firebase.firestore.FieldValue.arrayRemove("");
+						organizations: firebase.firestore.FieldValue.arrayRemove("")
 					}).then(() => {
 						document.location.reload(true);
 						$("#organization-form").css("visibility", "hidden");
