@@ -1,4 +1,5 @@
 const signupForm = document.querySelector('#signupForm');
+const e = document.getElementById("role");
 
 signupForm.addEventListener('submit', (e) => {
 	e.preventDefault();
@@ -23,14 +24,24 @@ signupForm.addEventListener('submit', (e) => {
 function createUser(password) {
 	const email = signupForm['email'].value;
 
-	auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-		const e = document.getElementById("role");
+	const stateOption = document.getElementById("role");
 
+	var state;
+
+	if (role == "competitor" || role == "state_delegation_advisor" || role == "chapter_advisor") {
+		state = stateOption.options[stateOption.selectedIndex].value;
+	} else {
+		state = "national";
+	}
+
+	auth.createUserWithEmailAndPassword(email, password).then((cred) => {
 		db.collection('Users').add({
 			uid : auth.currentUser.uid,
 			first_name: signupForm['first_name'].value,
 			last_name: signupForm['last_name'].value,
 			role: e.options[e.selectedIndex].value,
+			state: state,
+			rejected: false,
 			approved: false
 		}).then(() => {
 			window.location.replace("../homepage/home.html");
@@ -40,4 +51,21 @@ function createUser(password) {
 	}).catch(err => {
 		signupForm.querySelector('.error').innerHTML = err.message;
 	});
+}
+
+$(function() {
+	$("#label-state").css("visibility", "hidden");
+	$("#state").css("visibility", "hidden");
+});
+
+function checkRole() {
+	var role = e.options[e.selectedIndex].value;
+
+	if (role == "competitor" || role == "state_delegation_advisor" || role == "chapter_advisor") {
+		$("#label-state").css("visibility", "visible");
+		$("#state").css("visibility", "visible");
+	} else {
+		$("#label-state").css("visibility", "hidden");
+		$("#state").css("visibility", "hidden");
+	}
 }
