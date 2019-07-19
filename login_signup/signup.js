@@ -25,7 +25,7 @@ function createUser(password) {
 	const email = signupForm['email'].value;
 
 	const stateOption = document.getElementById("state");
-	const org = document.getElementById("user-organization");
+	const org = document.getElementById("org-select");
 
 	var state;
 	var role = e.options[e.selectedIndex].value;
@@ -66,7 +66,7 @@ $(function() {
 			var name = doc.data().name;
 
 			var item = document.createElement("option");
-			$(item).attr("id", "user-organization");
+			$(item).addClass("user-organization");
 			$(item).html(abbreviation);
 			$(item).attr("value", abbreviation);
 			$(item).attr("title", name);
@@ -81,8 +81,10 @@ function checkRole() {
 	if (role == "competitor" || role == "state_delegation_advisor" || role == "chapter_advisor") {
 		$("#label-state").css("visibility", "visible");
 		$("#state").css("visibility", "visible");
+		$("#org-select").css("visibility", "visible");
 	} else {
 		$("#label-state").css("visibility", "hidden");
 		$("#state").css("visibility", "hidden");
+		$("#org-select").css("visibility", "hidden");
 	}
 }
