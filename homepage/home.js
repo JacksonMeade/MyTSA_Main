@@ -144,9 +144,9 @@ form.addEventListener('submit', (e) => {
 					organization: abbreviation
 				});
 			});
+		}).then(() => {
+			document.location.reload(true);
 		});
 	});
-
-	document.location.reload(true);
 
 });
