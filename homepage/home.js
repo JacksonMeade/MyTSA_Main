@@ -44,6 +44,8 @@ function getApprovalRequests(org, i) {
 		lowerRank = "competitor";
 	}
 
+	console.log(lowerRank);
+
 	db.collection('Users').where("role", "==", lowerRank).where("approved", "==", "false").where("rejected", "==", "false").where("organization", "==", org).get().then(snapshot => {
 		snapshot.docs.forEach(doc => {
 
@@ -147,7 +149,7 @@ form.addEventListener('submit', (e) => {
 		db.collection('Users').where("uid", "==", auth.currentUser.uid).get().then(snapshot => {
 			snapshot.docs.forEach(doc => {
 				db.collection('Users').doc(doc.id).update({
-					organization: abbreviation
+					organizations: firebase.firestore.FieldValue.arrayUnion(abbreviation)
 				});
 			});
 		}).then(() => {
