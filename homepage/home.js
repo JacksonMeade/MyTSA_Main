@@ -15,8 +15,6 @@ function loadInfo(doc) {
 	$("#state").html(userState);
 	$("#approved").html(doc.data().approved);
 
-
-
 	if (role != "competitor") {
 		var approvalRequests = document.createElement("div");
 		$(approvalRequests).attr("id", "approval-requests");
@@ -128,14 +126,27 @@ logout.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
-		db.collection('Organizations').add({
-			name: form['name'].value,
-			abbreviation: form['abbreviation'].value,
-			description: form['description'].value,
-			archived_info: [],
-			owners: []
-		}).then(() => {
-					$("#organization-form").css("visibility", "hidden");
-					form.reset();
+	var abbreviation = form['abbreviation'].value;
+
+	db.collection('Organizations').add({
+		name: form['name'].value,
+		abbreviation: abbreviation,
+		description: form['description'].value,
+		archived_info: [],
+		owners: [ auth.currentUser.uid ]
+	}).then(() => {
+		$("#organization-form").css("visibility", "hidden");
+		form.reset();
+
+		db.collection('Users').where("uid", "==", auth.currentUser.uid).get().then(snapshot => {
+			snapshot.docs.forEach(doc => {
+				db.collection('Users').doc(doc.id).update({
+					organization: abbreviation
+				});
+			});
 		});
+	});
+
+	document.location.reload(true);
+
 });
