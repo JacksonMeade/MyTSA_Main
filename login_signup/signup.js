@@ -90,15 +90,15 @@ $(function() {
 function checkRole() {
 	var role = e.options[e.selectedIndex].value;
 
-	if (role == "competitor" || role == "state_delegation_advisor" || role == "chapter_advisor") {
-		$("#label-state").css("display", "inline-block");
-		$("#state").css("display", "inline-block");
-		$("#org-select").css("display", "inline-block");
-		$("#org-select-label").css("display", "inline-block");
-	} else {
+	if (role == "organization_manager") {
 		$("#label-state").css("display", "none");
 		$("#state").css("display", "none");
 		$("#org-select").css("display", "none");
 		$("#org-select-label").css("display", "none");
+	} else {
+		$("#label-state").css("display", "inline-block");
+		$("#state").css("display", "inline-block");
+		$("#org-select").css("display", "inline-block");
+		$("#org-select-label").css("display", "inline-block");
 	}
 }
