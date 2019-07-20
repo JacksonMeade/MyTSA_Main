@@ -64,11 +64,11 @@ function createUser(password) {
 }
 
 $(function() {
-	$("#label-state").css("visibility", "hidden");
-	$("#state").css("visibility", "hidden");
+	$("#label-state").css("display", "none");
+	$("#state").css("display", "none");
 
-	$("#org-select").css("visibility", "hidden");
-	$("#org-select-label").css("visibility", "hidden");
+	$("#org-select").css("display", "none");
+	$("#org-select-label").css("display", "none");
 
 	db.collection('Organizations').get().then(snapshot => {
 		snapshot.docs.forEach(doc => {
@@ -91,14 +91,14 @@ function checkRole() {
 	var role = e.options[e.selectedIndex].value;
 
 	if (role == "competitor" || role == "state_delegation_advisor" || role == "chapter_advisor") {
-		$("#label-state").css("visibility", "visible");
-		$("#state").css("visibility", "visible");
-		$("#org-select").css("visibility", "visible");
-		$("#org-select-label").css("visibility", "visible");
+		$("#label-state").css("display", "inline-block");
+		$("#state").css("display", "inline-block");
+		$("#org-select").css("display", "inline-block");
+		$("#org-select-label").css("display", "inline-block");
 	} else {
-		$("#label-state").css("visibility", "hidden");
-		$("#state").css("visibility", "hidden");
-		$("#org-select").css("visibility", "hidden");
-		$("#org-select-label").css("visibility", "hidden");
+		$("#label-state").css("display", "none");
+		$("#state").css("display", "none");
+		$("#org-select").css("display", "none");
+		$("#org-select-label").css("display", "none");
 	}
 }
