@@ -50,9 +50,9 @@ function createUser(password) {
 			last_name: signupForm['last_name'].value,
 			role: role,
 			state: state,
-			rejected: "false",
+			rejected: false,
 			organizations: [ organ ],
-			approved: "false"
+			approved: false
 		}).then(() => {
 			window.location.replace("../homepage/home.html");
 		});
