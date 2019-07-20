@@ -98,10 +98,26 @@ firebase.auth().onAuthStateChanged((user) => {
 		if (!userSignedIn) {
 			var uid = user.uid;
 
-			db.collection('Users').where("uid", "==", "" + uid).get().then(snapshot =>
-				 {
+			db.collection('Users').where("uid", "==", "" + uid).get().then(snapshot => {
 				snapshot.docs.forEach(doc => {
-					loadInfo(doc);
+					var role = doc.data().role;
+					var higherRank = "";
+
+					if (role == "organization_manager") {
+						higherRank = "CRC Leader";
+					} else if (role == "state_delegation_advisor") {
+						higherRank = "National Advisor / Organization Mangers";
+					} else if (role == "chapter_advisor") {
+						higherRank = "State Advisor";
+					} else if (role == "competitor") {
+						higherRank = "Chapter Advisor";
+					}
+
+					if (doc.data().approved == false) {
+						alert("Your Account Has Not been Approved Yet. Please speak to your " + higherRank);
+					} else {
+						loadInfo(doc);
+					}
 				});
 			});
 
